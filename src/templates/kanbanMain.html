@@ -46,11 +46,12 @@
           class="task-content__task-ready-list-select form-control me-2"
           data-state="in-progress"
         ></select>
+        <p id="error-ready" class="error-text app-hidden"></p>
         <button class="task-content__btn-submit" data-state="in-progress">
           Submit
         </button>
       </form>
-      <button class="task-content__btn-add" data-state="in-progress" disabled>
+      <button class="task-content__btn-add" data-state="in-progress" role="progress" disabled>
         + Add Card
       </button>
     </div>
@@ -71,7 +72,8 @@
           Submit
         </button>
       </form>
-      <button class="task-content__btn-add" data-state="finished" disabled>
+      <p id="error-ready" class="error-text app-hidden"></p>
+      <button class="task-content__btn-add" data-state="finished" role="finished" disabled>
         + Add Card
       </button>
     </div>

@@ -193,12 +193,10 @@ h6 {
 .user-content {
   max-width: 200px;
   min-height: 200px;
-  flex-shrink: 0;
   flex-grow: 1;
   padding: 20px;
-  border: 2px solid #0067a3;
-  border-radius: 5px;
-  background-color: #ebecf0;
+  border-radius: 6px;
+  background-color: #cbcbcb;
 }
 
 .add-user-form {
@@ -222,13 +220,9 @@ h6 {
 
 .user-content__info {
   display: block;
-  margin-bottom: 12px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
+  margin-bottom: 14px;
   font-size: 26px;
-  line-height: 21px;
-  color: rgb(1, 87, 87);
+  text-align: center;
 }
 
 .task-counter-list {
@@ -429,7 +423,6 @@ h6 {
   display: none;
   position: absolute;
   width: 100%;
-  height: 100%;
   z-index: 25;
   padding: 22px 0px 22px 28px;
   background-color: rgb(255, 255, 255);

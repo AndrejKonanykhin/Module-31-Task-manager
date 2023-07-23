@@ -153,7 +153,7 @@ function loadMainPage() {
       if (state == "ready" && userListSelect.options.length <= 0) {
         const userError = document.querySelector("#error-ready");
         buttonErr(item, "Некому назначить задачу, создайте пользователя");
-        userError.textContent = "You should create user first!"
+        userError.textContent = "You should create user first!";
         userError.classList.toggle("app-hidden");
 
         return;
@@ -162,7 +162,7 @@ function loadMainPage() {
       if (state == "in-progress" && taskReadyListSelect.options.length <= 0) {
         const listError = document.querySelector("#error-ready");
         buttonErr(item, "Список Ready пуст");
-        listError.textContent = "Ready tasks list is empty"
+        listError.textContent = "Ready tasks list is empty";
         listError.classList.toggle("app-hidden");
         return;
       }
@@ -170,7 +170,7 @@ function loadMainPage() {
       if (state == "finished" && taskInProgressListSelect.options.length <= 0) {
         const listError = document.querySelector("#error-ready");
         buttonErr(item, "Список In Progress пуст");
-        listError.textContent = "In Progress tasks list is empty"
+        listError.textContent = "In Progress tasks list is empty";
         listError.classList.toggle("app-hidden");
         return;
       }
@@ -203,6 +203,8 @@ function loadMainPage() {
           taskOption.value = task.id;
           taskReadyListSelect.appendChild(taskOption);
         }
+        const addProgressButton = document.querySelector('[role="progress"]');
+        addProgressButton.removeAttribute("disabled");
       }
 
       if (state == "in-progress" && taskReadyListSelect.options.length > 0) {
@@ -269,6 +271,12 @@ function loadAddUserPage() {
     taskCounterReady.textContent = `Ready: ${tasks.taskListReady.length}`;
     taskCounterInProgress.textContent = `In Progress: ${tasks.taskListInProgress.length}`;
     taskCounterFinished.textContent = `Finished: ${tasks.taskListFinished.length}`;
+
+    // const addProgressButton = document.querySelector('[role="progress"]');
+    // addProgressButton.removeAttribute("disabled");
+
+    // const addFinishedButton = document.querySelector('[role="finished"]');
+    // addFinishedButton.removeAttribute("disabled");
   });
 
   contentFooterElement.innerHTML = addUserFooter;
