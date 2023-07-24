@@ -154,8 +154,22 @@ h6 {
 }
 
 .error-text {
-  font-size: 12px;
+  font-size: 14px;
   color: #f00;
+}
+
+.error-div {
+  position: fixed;
+  font-size: 18px;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  color: #f00;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 15px 15px -8px rgba(0, 0, 0, 0.3);
 }
 
 /* Эффекты появления-исчезания */
@@ -181,6 +195,9 @@ h6 {
 
 .dropdown__btn {
   background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .user-container {
@@ -234,7 +251,7 @@ h6 {
 
 .task-counter-list__item {
   padding: 4px 12px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 5px;
 }
 
@@ -312,7 +329,6 @@ h6 {
 .task-item__task-executor {
   display: inline-block;
   margin-top: 5px;
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -420,13 +436,14 @@ h6 {
 }
 
 .task-info {
-  display: none;
   position: absolute;
+  top: 0;
   width: 100%;
-  z-index: 25;
-  padding: 22px 0px 22px 28px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
+  z-index: 20;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #fff;
+  display: none;
 }
 
 .task-info_active {
@@ -435,31 +452,19 @@ h6 {
 
 .task-info__exit-btn {
   position: absolute;
-  top: 17px;
-  right: 23px;
+  top: 0;
+  right: 0;
+  background: transparent;
+}
+
+.task-info__exit-btn:hover svg {
+  fill: #f00;
 }
 
 .task-info__title {
   display: block;
-  max-width: 60%;
-  margin-bottom: 35px;
-  font-family: "Roboto";
+  margin-bottom: 20px;
   font-size: 24px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.task-info__description {
-  max-width: 60%;
-  margin: 0px;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0em;
-  text-align: left;
 }
 
 .task-info__title-change-input {
@@ -469,8 +474,8 @@ h6 {
 }
 
 .task-info__description-change-textarea {
-  max-width: 60%;
-  min-height: 2000px;
+  resize: none;
+  min-height: 50vh;
 }
 
 .profile {
@@ -525,9 +530,9 @@ h6 {
   top: 100%;
   right: 0;
   text-align: center;
-  background-color: white;
+  background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0 15px 10px -10px #cbcbcb;
+  box-shadow: 0 15px 15px -8px rgba(0, 0, 0, 0.3);
 }
 
 .user-info__dropdown:hover .dropdown__content {
@@ -565,5 +570,5 @@ h6 {
 }
 
 .greeting__title {
-  color: #ffffff;
+  color: #fff;
 }

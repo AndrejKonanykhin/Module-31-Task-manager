@@ -45,7 +45,7 @@ export function clearNode(list) {
 
 export function createFirstAdmin() {
   if (getFromStorage("users").length <= 0) {
-    const admin = new Admin("admin", "admin123");
+    const admin = new Admin("test", "qwerty123");
     Admin.save(admin);
   }
 }
@@ -64,9 +64,32 @@ export function calculateTask() {
     taskListFiltered = filteredTaskList();
   }
 
-  activeTaskCounterNode.textContent = taskListFiltered.taskListReady.length;
+  activeTaskCounterNode.textContent =
+    taskListFiltered.taskListInProgress.length;
   finishedTaskCounterNode.textContent =
     taskListFiltered.taskListFinished.length;
+
+  if (taskListFiltered.taskListReady.length > 0) {
+    const addProgressButton = document.querySelector('[role="progress"]');
+    addProgressButton.removeAttribute("disabled");
+    const addFinishedButton = document.querySelector('[role="finished"]');
+    addFinishedButton.removeAttribute("disabled");
+  }
+
+  if (taskListFiltered.taskListReady.length == 0) {
+    const addProgressButton = document.querySelector('[role="progress"]');
+    addProgressButton.setAttribute("disabled", "disabled");
+  }
+
+  if (taskListFiltered.taskListReady.length == 0) {
+    const addProgressButton = document.querySelector('[role="finished"]');
+    addProgressButton.setAttribute("disabled", "disabled");
+  }
+
+  if (taskListFiltered.taskListInProgress.length > 0) {
+    const addProgressButton = document.querySelector('[role="finished"]');
+    addProgressButton.removeAttribute("disabled");
+  }
 }
 
 export function filteredTaskList(user = "") {
@@ -113,4 +136,10 @@ export function buttonErr(btn, errMessage) {
   setTimeout(() => {
     btn.classList.toggle("btn_error");
   }, 200);
+}
+
+export function closeError(div) {
+  setTimeout(() => {
+    div.remove();
+  }, 2000);
 }

@@ -1,6 +1,6 @@
 <div class="kanban">
   <div class="kanban__content">
-    <div class="task-content" data-state="ready">
+    <section class="task-content" data-state="ready">
       <span class="task-content__title">Ready</span>
       <ul class="task-list task-list__ready" data-state="ready"></ul>
       <form
@@ -29,9 +29,9 @@
       <button class="task-content__btn-add" data-state="ready">
         + Add Card
       </button>
-    </div>
+    </section>
     <!-- IN PROGRESS -->
-    <div class="task-content" data-state="in-progress">
+    <section class="task-content" data-state="in-progress">
       <span class="task-content__title">In Progress</span>
       <ul
         class="task-list task-list__in-progress"
@@ -51,12 +51,12 @@
           Submit
         </button>
       </form>
-      <button class="task-content__btn-add" data-state="in-progress" role="progress" disabled>
+      <button class="task-content__btn-add" data-state="in-progress" role="progress">
         + Add Card
       </button>
-    </div>
+    </section>
     <!-- FINISHED -->
-    <div class="task-content" data-state="finished">
+    <section class="task-content" data-state="finished">
       <span class="task-content__title">Finished</span>
       <ul class="task-list task-list__finished" data-state="finished"></ul>
       <form
@@ -73,9 +73,9 @@
         </button>
       </form>
       <p id="error-ready" class="error-text app-hidden"></p>
-      <button class="task-content__btn-add" data-state="finished" role="finished" disabled>
+      <button class="task-content__btn-add" data-state="finished" role="finished">
         + Add Card
       </button>
-    </div>
+    </section>
   </div>
 </div>

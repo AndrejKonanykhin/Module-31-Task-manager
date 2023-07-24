@@ -235,6 +235,7 @@ function loadMainPage() {
   });
 
   updateAllTaskList();
+
 }
 
 function loadAddUserPage() {
@@ -261,6 +262,7 @@ function loadAddUserPage() {
     const taskCounterInProgress = document.querySelectorAll(
       ".task-counter-list__item-in-progress"
     )[index];
+
     const taskCounterFinished = document.querySelectorAll(
       ".task-counter-list__item-finished"
     )[index];
@@ -272,11 +274,6 @@ function loadAddUserPage() {
     taskCounterInProgress.textContent = `In Progress: ${tasks.taskListInProgress.length}`;
     taskCounterFinished.textContent = `Finished: ${tasks.taskListFinished.length}`;
 
-    // const addProgressButton = document.querySelector('[role="progress"]');
-    // addProgressButton.removeAttribute("disabled");
-
-    // const addFinishedButton = document.querySelector('[role="finished"]');
-    // addFinishedButton.removeAttribute("disabled");
   });
 
   contentFooterElement.innerHTML = addUserFooter;
